@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Harshvardhan Rathod | Universe Ultra Pro Max</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,.15), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(255,0,255,.15), transparent 30%);
+    z-index:-2;
+}
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* Navbar */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(15px);
+    z-index:999;
+}
+
+.logo{
+    font-family:'Orbitron';
+    font-size:1.8rem;
+    color:#00ffff;
+    text-shadow:0 0 20px #00ffff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00ffff;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 10%;
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:4px solid #00ffff;
+    margin:auto;
+    box-shadow:0 0 40px #00ffff;
+    background:linear-gradient(45deg,#00ffff,#ff00ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:5rem;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-family:'Orbitron';
+    font-size:4rem;
+    margin-top:30px;
+    color:#00ffff;
+}
+
+.typing{
+    color:#ff00ff;
+    margin:20px 0;
+    font-size:1.4rem;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 35px;
+    border:2px solid #00ffff;
+    border-radius:40px;
+    color:#00ffff;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.btn:hover{
+    background:#00ffff;
+    color:black;
+    box-shadow:0 0 30px #00ffff;
+}
+
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:2.7rem;
+    margin-bottom:60px;
+    color:#00ffff;
+    font-family:'Orbitron';
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    padding:30px;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #00ffff;
+}
+
+.card h3{
+    color:#00ffff;
+    margin-bottom:15px;
+}
+
+/* Skills */
+
+.skill{
+    margin-bottom:30px;
+}
+
+.skill span{
+    display:block;
+    margin-bottom:10px;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+    border-radius:20px;
+    background:#222;
+}
+
+.fill{
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,#00ffff,#ff00ff);
+}
+
+footer{
+    text-align:center;
+    padding:50px;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+.socials a{
+    color:#00ffff;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+@media(max-width:768px){
+
+nav ul{
+    display:none;
+}
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<nav>
+    <div class="logo">HARSH AI</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+<div>
+
+<div class="profile">HR</div>
+
+<h1>Harshvardhan Rathod</h1>
+
+<h2 class="typing" id="typing"></h2>
+
+<p>
+I am a Class 9 student, innovator, creator and future roboticist.
+I love playing cricket, exploring the internet world, learning new technologies and solving real-world problems through innovation.
+
+I am passionate about Arduino, Robotics, IoT, Artificial Intelligence and futuristic technologies. My mission is to create world-class innovations that positively impact humanity.
+</p>
+
+<a class="btn" href="#about">Explore My Universe 🚀</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎓 Education</h3>
+<p>Currently studying in Class 9 and continuously learning advanced technologies.</p>
+</div>
+
+<div class="card">
+<h3>🏏 Interests</h3>
+<p>Cricket, Robotics, Innovation, Technology, Internet Exploration and Scientific Thinking.</p>
+</div>
+
+<div class="card">
+<h3>💡 Personality</h3>
+<p>Creative, curious, innovative and always ready to tackle challenging problems.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">Skills & Passion</h2>
+
+<div class="skill">
+<span>Robotics</span>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<span>Arduino</span>
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<span>Innovation</span>
+<div class="bar"><div class="fill" style="width:95%"></div></div>
+</div>
+
+<div class="skill">
+<span>Creativity</span>
+<div class="bar"><div class="fill" style="width:98%"></div></div>
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="title">Future Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🌱 Smart Plant Health System</h3>
+<p>Monitoring root health, moisture, sunlight and providing plant care guidance.</p>
+</div>
+
+<div class="card">
+<h3>💊 Smart Medicine Dispenser</h3>
+<p>An IoT-based automated medicine management system.</p>
+</div>
+
+<div class="card">
+<h3>🤖 World-Class Innovation</h3>
+<p>Creating futuristic solutions for real-world challenges.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>Designed By Harshvardhan Rathod 🚀</h2>
+
+<br>
+
+<div class="socials">
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+<a href="#">Email</a>
+</div>
+
+<br>
+
+<p>Dream • Innovate • Build • Repeat</p>
+
+</footer>
+
+<script>
+
+/* Typing */
+
+const texts=[
+"Student",
+"Innovator",
+"Future Roboticist",
+"Arduino Enthusiast",
+"Cricket Lover",
+"Technology Explorer"
+];
+
+let i=0;
+
+setInterval(()=>{
+document.getElementById("typing").innerText=texts[i];
+i=(i+1)%texts.length;
+},2000);
+
+
+/* Stars */
+
+const canvas=document.getElementById('stars');
+const ctx=canvas.getContext('2d');
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+
+for(let i=0;i<250;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+s:Math.random()*1
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle='white';
+
+stars.forEach(star=>{
+ctx.beginPath();
+ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+ctx.fill();
+
+star.y+=star.s;
+
+if(star.y>canvas.height){
+star.y=0;
+star.x=Math.random()*canvas.width;
+}
+});
+
+requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+});
+
+</script>
+
+</body>
+</html>
